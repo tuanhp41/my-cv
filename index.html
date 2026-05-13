@@ -238,41 +238,58 @@ body[data-lang=zh] .zh.lbl{display:block !important}
 
 /* ════════ PRINT ════════ */
 @media print{
-  @page{size:A4;margin:8mm 8mm 8mm 8mm}
-  html,body{background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  @page{size:A4 portrait;margin:8mm 8mm 8mm 8mm}
+  html{font-size:11px!important}
+  body{
+    background:#fff!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+    width:194mm!important;margin:0 auto!important
+  }
   .topbar{display:none!important}
-  .page-wrap{padding:0!important;max-width:100%!important}
+  .page-wrap{
+    padding:0!important;
+    max-width:194mm!important;
+    width:194mm!important;
+    margin:0!important
+  }
   .cv-card{
     box-shadow:none!important;border-radius:0!important;
-    display:grid!important;grid-template-columns:230px 1fr!important
+    display:grid!important;
+    width:194mm!important;
+    grid-template-columns:52mm 1fr!important
   }
   .sidebar{
     background:var(--navy)!important;
     -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;
-    padding:20px 14px!important
+    padding:24px 14px!important;gap:16px!important
   }
   .main-col{
     background:var(--sky-bg)!important;
     -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;
-    padding:16px 14px!important;gap:14px!important
+    padding:20px 16px!important;gap:16px!important
   }
+  .av-ring{width:80px!important;height:80px!important;min-width:80px!important}
+  .av-name{font-size:16px!important}
   .tl-head,.tl-body{box-shadow:none!important}
   .tl-head{background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .tl-body{background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .tl::before{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  /* Không dùng break-inside:avoid cho block lớn — gây khoảng trắng */
   .tl-item{break-inside:auto!important;page-break-inside:auto!important}
   .tg{break-inside:auto!important;page-break-inside:auto!important}
-  /* Chỉ avoid break cho phần tử nhỏ */
   .tl-head{break-inside:avoid;page-break-inside:avoid}
   .edu-card{break-inside:avoid;page-break-inside:avoid}
-  .ctv{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .ctv{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;overflow-x:visible!important}
+  .ctv-inner{min-width:unset!important;width:100%!important}
   .sk-bg,.sk-fill{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .sw-box,.q-box{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  /* font size boost for print */
-  .tl-ul li{font-size:10.5pt}
-  .tl-co{font-size:12pt}
-  .tl-role{font-size:10pt}
+  .edu-grid{grid-template-columns:1fr 1fr!important}
+  .sec-h{font-size:10px!important}
+  .tl-co{font-size:12px!important}
+  .tl-role{font-size:10px!important}
+  .tl-ul li{font-size:10px!important;line-height:1.5!important}
+  .tg-t{font-size:9px!important}
+  .tbadge{font-size:8.5px!important}
 }
 
 /* ════════ MOBILE ════════ */
@@ -418,7 +435,7 @@ body[data-lang=zh] .zh.lbl{display:block !important}
     <div class="info-list">
       <div class="ir"><span class="lbl vi">Điện thoại</span><span class="lbl en">Phone</span><span class="lbl zh">电话</span><span class="ir-val vi">0947-415-688</span><span class="ir-val en">0947-415-688</span><span class="ir-val zh">0947-415-688</span></div>
       <div class="ir"><span class="lbl">Skype</span><span class="ir-val vi">tuanhp41</span><span class="ir-val en">tuanhp41</span><span class="ir-val zh">tuanhp41</span></div>
-      <div class="ir"><span class="lbl">Email</span><span class="ir-val vi"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="057170646b6d753134456268646c692b666a68">[email&#160;protected]</a></span><span class="ir-val en"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="285c5d494640581c19684f45494144064b4745">[email&#160;protected]</a></span><span class="ir-val zh"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="453130242b2d357174052228242c296b262a28">[email&#160;protected]</a></span></div>
+      <div class="ir"><span class="lbl">Email</span><span class="ir-val vi">tuanhp41@gmail.com</span><span class="ir-val en">tuanhp41@gmail.com</span><span class="ir-val zh">tuanhp41@gmail.com</span></div>
     </div>
   </div>
 
@@ -433,6 +450,13 @@ body[data-lang=zh] .zh.lbl{display:block !important}
       <div class="sk-item"><div class="sk-row"><span>MES / ERP</span><span>85%</span></div><div class="sk-bg"><div class="sk-fill" style="width:85%"></div></div></div>
       <div class="sk-item"><div class="sk-row"><span>Low-code (Mendix)</span><span>75%</span></div><div class="sk-bg"><div class="sk-fill" style="width:75%"></div></div></div>
       <div class="sk-item"><div class="sk-row"><span>MS Office / Report</span><span>80%</span></div><div class="sk-bg"><div class="sk-fill" style="width:80%"></div></div></div>
+      <div class="sk-item">
+        <div class="sk-row">
+          <span><span class="vi">AI & Tự động hóa</span><span class="en">AI & Automation</span><span class="zh">AI与自动化</span></span>
+          <span>70%</span>
+        </div>
+        <div class="sk-bg"><div class="sk-fill" style="width:70%"></div></div>
+      </div>
       <div class="sk-item">
         <div class="sk-row">
           <span><span class="vi">Tiếng Anh</span><span class="en">English</span><span class="zh">英语</span></span>
@@ -488,12 +512,7 @@ body[data-lang=zh] .zh.lbl{display:block !important}
       <div class="sw-i en">Credible · Flexible · Patient · Sociable · Self-motivated and proactive</div>
       <div class="sw-i zh">可信赖 · 灵活 · 耐心 · 善于交际 · 积极主动</div>
     </div>
-    <div class="sw-box">
-      <div class="sw-t">⚠️ <span class="vi">Đang cải thiện</span><span class="en">Improving</span><span class="zh">待提升</span></div>
-      <div class="sw-i vi">Tiếng Anh đang tiếp tục nâng cao — hiện tại là trở ngại tạm thời</div>
-      <div class="sw-i en">Continuously improving English proficiency — currently a temporary limitation</div>
-      <div class="sw-i zh">英语持续提升中，目前为临时性短板</div>
-    </div>
+
   </div>
 
   <!-- Quote -->
@@ -600,6 +619,64 @@ body[data-lang=zh] .zh.lbl{display:block !important}
         <div class="edu-v vi">Mendix – Citizen Developer<br>Approval Workflow · App Builder</div>
         <div class="edu-v en">Mendix – Citizen Developer<br>Approval Workflow · App Builder</div>
         <div class="edu-v zh">Mendix低代码平台<br>公民开发者 · 审批流程</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② AI Knowledge & Automation -->
+  <section>
+    <div class="sec-h vi">🤖 Kiến thức AI & Tự động hóa</div>
+    <div class="sec-h en">🤖 AI Knowledge & Automation</div>
+    <div class="sec-h zh">🤖 AI知识与自动化</div>
+    <div class="tl-body" style="margin-top:0">
+      <div class="tg">
+        <div class="tg-t vi">🛠️ Phát triển công cụ hỗ trợ AI trong xây dựng hệ thống</div>
+        <div class="tg-t en">🛠️ AI-Assisted Tool Development for System Building</div>
+        <div class="tg-t zh">🛠️ AI驱动的系统构建辅助工具开发</div>
+        <ul class="tl-ul">
+          <li class="vi">Xây dựng và triển khai các công cụ tự động hóa hỗ trợ AI nhằm tăng tốc quá trình phát triển hệ thống low-code (Mendix), giảm thiểu thao tác thủ công và cải thiện độ chính xác trong việc trích xuất, phân tích metadata hệ thống</li>
+          <li class="en">Developed and deployed AI-powered automation tools to accelerate low-code system development (Mendix), reducing manual effort and improving accuracy in system metadata extraction and analysis</li>
+          <li class="zh">开发并部署AI驱动的自动化工具，加速低代码系统（Mendix）的开发进程，减少手动操作，提升系统元数据提取与分析的准确性</li>
+          <li class="vi">Thiết kế pipeline tự động hóa kết hợp AI (LLM) để phân tích cấu trúc module, tạo tài liệu wiki kỹ thuật và hỗ trợ quản trị dự án – thay thế quy trình thủ công tốn thời gian</li>
+          <li class="en">Designed AI-integrated (LLM) automation pipelines to analyze module structures, auto-generate technical wiki documentation, and support project governance – replacing time-consuming manual workflows</li>
+          <li class="zh">设计集成AI（LLM）的自动化流水线，用于分析模块结构、自动生成技术文档Wiki并支持项目治理，取代耗时的手动流程</li>
+          <li class="vi">Ứng dụng các mô hình AI lớn (LLM) như GPT và Gemini vào việc hỗ trợ phân tích nghiệp vụ, soạn thảo tài liệu kỹ thuật, kiểm tra lỗi metadata và tự động hóa tác vụ lặp lại trong chu trình phát triển phần mềm</li>
+          <li class="en">Applied large language models (LLM) such as GPT and Gemini to assist with business analysis, technical documentation drafting, metadata error checking, and repetitive task automation within the software development lifecycle</li>
+          <li class="zh">将大型语言模型（LLM，如GPT、Gemini）应用于业务分析辅助、技术文档起草、元数据错误检查及软件开发生命周期中重复性任务的自动化</li>
+          <li class="vi">Xây dựng hệ thống quản trị AI workforce (phân vai AI agent, giao việc có cấu trúc, theo dõi kết quả) áp dụng vào quy trình phát triển phần mềm thực tế</li>
+          <li class="en">Built an AI workforce governance system (role-based agent assignment, structured task delegation, result tracking) applied to real-world software development workflows</li>
+          <li class="zh">构建AI工作力治理体系（基于角色的AI代理分配、结构化任务委派、结果跟踪），并应用于实际软件开发工作流程</li>
+        </ul>
+      </div>
+      <div class="tg">
+        <div class="tg-t vi">🔧 Công cụ & Công nghệ AI đã sử dụng</div>
+        <div class="tg-t en">🔧 AI Tools & Technologies Used</div>
+        <div class="tg-t zh">🔧 使用的AI工具与技术</div>
+        <div class="tech-row">
+          <span class="tbadge">Large Language Models (LLM)</span>
+          <span class="tbadge">Python</span>
+          <span class="tbadge">Prompt Engineering</span>
+          <span class="tbadge">AI Agent Orchestration</span>
+          <span class="tbadge">JSON / BSON Analysis</span>
+          <span class="tbadge">MCP Protocol</span>
+          <span class="tbadge">Mendix SDK</span>
+        </div>
+      </div>
+      <div class="tg">
+        <div class="tg-t vi">🚀 Dự án cá nhân & Proof of Concept</div>
+        <div class="tg-t en">🚀 Personal Projects & Proof of Concept</div>
+        <div class="tg-t zh">🚀 个人项目与概念验证</div>
+        <ul class="tl-ul">
+          <li class="vi"><strong>CV SaaS – AI Auto-Design CV</strong> (đang phát triển): Ứng dụng web tự động thiết kế CV bằng AI, hỗ trợ đa ngôn ngữ. Stack: Next.js 14, Supabase, Vercel</li>
+          <li class="en"><strong>CV SaaS – AI Auto-Design CV</strong> (in development): A web app that automatically designs CVs using AI, with multilingual support. Stack: Next.js 14, Supabase, Vercel</li>
+          <li class="zh"><strong>CV SaaS – AI自动设计简历</strong>（开发中）：使用AI自动生成简历的Web应用，支持多语言。技术栈：Next.js 14、Supabase、Vercel</li>
+          <li class="vi"><strong>Mini ERP / Quản trị kinh doanh nhỏ</strong> (đang lên kế hoạch): Nghiên cứu và chuẩn bị xây dựng giải pháp phần mềm quản trị kinh doanh nhỏ theo từng mô hình (bán lẻ, dịch vụ, sản xuất nhỏ) – tập trung vào giao diện đơn giản, phù hợp SME Việt Nam, tích hợp AI hỗ trợ phân tích doanh thu và tồn kho</li>
+          <li class="en"><strong>Mini ERP / SME Business Management</strong> (planning): Researching and preparing to build a lightweight business management software tailored to different SME models (retail, service, light manufacturing) – simple UI, Vietnam SME-friendly, with AI-assisted revenue and inventory analysis</li>
+          <li class="zh"><strong>迷你ERP / 中小企业管理软件</strong>（规划中）：研究并准备开发针对不同业务模型（零售、服务、轻型制造）的轻量级企业管理软件，界面简洁，适合越南中小企业，集成AI辅助收入与库存分析</li>
+          <li class="vi"><strong>AI Workforce Governance Framework</strong> (đã triển khai nội bộ): Thiết kế và triển khai hệ thống điều phối đội nhóm AI agent (Planner / Coordinator / Coder / Reviewer) với quy trình handoff, task board, audit log – áp dụng thực tế vào các dự án phát triển phần mềm cá nhân</li>
+          <li class="en"><strong>AI Workforce Governance Framework</strong> (deployed internally): Designed and deployed an AI agent team orchestration system (Planner / Coordinator / Coder / Reviewer roles) with structured handoff protocols, task boards, and audit logs – applied to real personal software development projects</li>
+          <li class="zh"><strong>AI工作力治理框架</strong>（已内部部署）：设计并部署AI代理团队协作系统（规划者/协调者/编码者/审查者角色），包含结构化交接协议、任务看板和审计日志，已实际应用于个人软件开发项目</li>
+        </ul>
       </div>
     </div>
   </section>
